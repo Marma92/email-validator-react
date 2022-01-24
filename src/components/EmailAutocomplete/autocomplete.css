@@ -23,4 +23,5 @@ input {
 .suggestions span:hover{
   color: violet;
   text-decoration: none;
+  cursor: pointer;
 }
