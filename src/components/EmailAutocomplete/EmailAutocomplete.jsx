@@ -77,9 +77,9 @@ class EmailAutocomplete extends Component {
             {filteredSuggestions.map((suggestion, index) => {
               let className;
               return (
-                <span className={className} key={suggestion} onClick={onClick}>
+                <span>@<span className={className} key={suggestion} onClick={onClick}>
                   {suggestion}
-                </span>
+                </span></span>
               );
             })}
           </div>
