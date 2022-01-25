@@ -54,7 +54,7 @@ class EmailAutocomplete extends Component {
       showSuggestions: false,
       userInput: applyProvider(this.state.userInput, e.currentTarget.innerText)
     });
-    // it would be a nice bonus, if the input kept the focus on suggestion click
+    // it would be a nice bonus, if the input kept the focus on suggestion click (here is the nice bonus ;) )
     this.y.focus()
   };
 

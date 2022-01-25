@@ -6,17 +6,15 @@ import EmailValidator from 'email-validator';
   */
 export function filterSuggestions(suggestions, input) {
   //if the input is a valid email address, no suggestion should be displayed
-  if (EmailValidator.validate(input)) {
-      return [];
-  }
+  if (EmailValidator.validate(input))
+    return [];
   // if the input contains the character "@", the 3 best matches should be displayed
   if (input && input.includes('@')) {
     const providers = suggestions
     .filter(p => p.startsWith(input.split('@')[1]))
     .slice(0, 3);
-    if (providers.length !== 0) {
+    if (providers.length > 0)
       return providers
-    }
   }
   // if the input doesn't contain the character "@", the 3 most popular providers should be displayed
   return suggestions.slice(0, 3);
@@ -29,9 +27,8 @@ export function filterSuggestions(suggestions, input) {
   */
 export function applyProvider(input, provider) {
     if (input) {
-        if (input.includes('@')) {
-            return input.split('@')[0] + '@' + provider;
-        }
-        return input + '@' + provider;
+        if (input.includes('@'))
+          return input.split('@')[0] + '@' + provider;
+      return input + '@' + provider;
     }
 }
